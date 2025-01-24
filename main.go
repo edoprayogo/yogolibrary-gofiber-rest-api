@@ -1,19 +1,28 @@
 package main
 
 import (
+	"yogolibrary-gofiber-rest-api/internal/config"
+	"yogolibrary-gofiber-rest-api/internal/connection"
+	"yogolibrary-gofiber-rest-api/internal/repository"
+
 	"github.com/gofiber/fiber/v2"
 )
 
 func main() {
 
+	cnf := config.Get()
+	dbConn := connection.GetDatabase(cnf.Database)
+
 	app := fiber.New()
 
-	app.Get("/developers", developers)
+	customerRepostory := repository.NewCustomer(dbConn)
 
-	app.Listen(":9001")
+	app.Get("/check", check)
+
+	app.Listen(cnf.Server.Host + ":" + cnf.Server.Port)
 
 }
 
-func developers(ctx *fiber.Ctx) error {
-	return ctx.Status(200).JSON("data")
+func check(ctx *fiber.Ctx) error {
+	return ctx.Status(200).JSON("OK")
 }
