@@ -3,6 +3,7 @@ package domain
 import (
 	"context"
 	"database/sql"
+	"yogolibrary-gofiber-rest-api/dto"
 )
 
 type Customer struct {
@@ -24,6 +25,6 @@ type CutomerRepository interface {
 	Delete(ctx context.Context, id string) error
 }
 
-type CustomerService interface{
-	Index(ctx context.Context){[]dto.CustomerData, err}
+type CustomerService interface {
+	Index(ctx context.Context) ([]dto.CustomerData, error)
 }

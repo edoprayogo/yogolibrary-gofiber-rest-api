@@ -19,7 +19,7 @@ func GetDatabase(conf config.Database) *sql.DB {
 		conf.Tz,
 	)
 
-	db, err := sql.Open("postgress", dsn)
+	db, err := sql.Open("postgres", dsn)
 
 	if err != nil {
 		log.Fatal("Failed to open connection: ", err.Error())
