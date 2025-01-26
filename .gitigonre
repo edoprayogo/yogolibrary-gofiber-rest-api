@@ -1,0 +1,41 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Output of `go build` and `go run`
+*.out
+*.a
+*.o
+
+# Build directories
+_build/
+bin/
+debug/
+release/
+
+# Dependency directories (used in older Go versions)
+vendor/
+
+# Go test binary
+*.test
+
+# IDE-specific files (e.g., VS Code, JetBrains)
+.vscode/
+.idea/
+
+# Logs and debug output
+*.log
+*.tmp
+
+# System-specific files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+
+# Module cache (Go modules)
+go.sum

@@ -66,7 +66,7 @@ func (c *customerRepostory) Delete(ctx context.Context, id string) error {
 	excutor := c.db.Update("customers").
 		Where(goqu.C("id").Eq(id)).
 		Set(goqu.Record{
-			"deletet_at": sql.NullTime{Valid: true, Time: time.Now()}}).
+			"deleted_at": sql.NullTime{Valid: true, Time: time.Now()}}).
 		Executor()
 
 	_, err := excutor.ExecContext(ctx)

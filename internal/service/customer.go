@@ -13,6 +13,14 @@ type customerService struct {
 // Index implements domain.CustomerService.
 func (c *customerService) Index(ctx context.Context) ([]dto.CustomerData, error) {
 	customers, err := c.customerRepostory.FindAll(ctx)
+	// customer := dto.CustomerData{
+	// 	ID:   "dsa",
+	// 	Name: "da",
+	// }
+
+	// customers := []dto.CustomerData{
+	// 	customer,
+	// }
 
 	if err != nil {
 		return nil, err
