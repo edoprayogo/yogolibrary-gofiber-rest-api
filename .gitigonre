@@ -9,27 +9,23 @@
 *.out
 *.a
 *.o
-*.vscode
 
 # Build directories
-_build/
 bin/
+_build/
 debug/
 release/
 
-# Dependency directories (used in older Go versions)
-vendor/
-
-# Go test binary
-*.test
-
-# IDE-specific files (e.g., VS Code, JetBrains)
-.vscode/
-.idea/
-
-# Logs and debug output
+# Temporary files and logs
 *.log
 *.tmp
+
+# Dependency directories
+vendor/
+
+# IDE and Editor specific files
+.vscode/
+.idea/
 
 # System-specific files
 .DS_Store
@@ -37,6 +33,20 @@ Thumbs.db
 
 # Environment files
 .env
+.env.*
 
-# Module cache (Go modules)
-go.sum
+# Fiber static and generated files
+public/
+static/
+views/
+
+# Fiber temporary session or storage files (if applicable)
+storage/
+sessions/
+
+# Docker files (if using Docker)
+docker-compose.override.yml
+docker-compose.override.yaml
+
+# other
+.vscode/
