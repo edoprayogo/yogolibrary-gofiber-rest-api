@@ -29,4 +29,5 @@ type CutomerRepository interface {
 
 type CustomerService interface {
 	Index(ctx context.Context) ([]dto.CustomerData, error)
+	Create(ctx context.Context, request dto.CreateCustomerRequest) error
 }
