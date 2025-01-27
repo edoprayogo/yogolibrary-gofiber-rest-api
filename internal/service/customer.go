@@ -46,5 +46,6 @@ func (c customerService) Create(ctx context.Context, request dto.CreateCustomerR
 		CreatedAt: sql.NullTime{Valid: true, Time: time.Now()},
 		CreatedBy: sql.NullString{String: request.CreatedBy},
 	}
+
 	return c.customerRepostory.Save(ctx, &customer)
 }

@@ -42,8 +42,10 @@ func (c *customerRepostory) FindById(ctx context.Context, id string) (result dom
 
 // Save implements domain.CutomerRepository.
 func (c *customerRepostory) Save(ctx context.Context, cust *domain.Customer) error {
-	//panic("unimplemented")
-	excutor := c.db.Insert("customers").Rows(c).Executor()
+
+	excutor := c.db.Insert("customers").
+		Rows(cust).
+		Executor()
 	_, err := excutor.ExecContext(ctx)
 	return err
 }

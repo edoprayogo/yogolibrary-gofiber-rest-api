@@ -14,7 +14,6 @@ func main() {
 
 	cnf := config.Get()
 	dbConn := connection.GetDatabase(cnf.Database)
-
 	app := fiber.New()
 
 	customerRepostory := repository.NewCustomer(dbConn)
